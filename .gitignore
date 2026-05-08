@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build output
+dist/
+frontend/dist/
+*.tsbuildinfo
+
+# Local env + tokens (NEVER commit)
+.env
+.env.local
+.tokens.json
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TLS
+cert/
+*.pem
+*.key

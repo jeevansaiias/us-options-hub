@@ -1,0 +1,25 @@
+{
+  "name": "us-options-hub",
+  "version": "0.1.0",
+  "description": "Browser-based options analytics terminal for US equities and indices, powered by Charles Schwab API",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node proxy-server.mjs",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "lint:frontend": "npm --prefix frontend run lint",
+    "tsc:frontend": "npm --prefix frontend run tsc"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeevansaiias/us-options-hub.git"
+  }
+}
