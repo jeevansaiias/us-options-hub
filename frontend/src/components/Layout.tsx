@@ -45,6 +45,9 @@ function Header({ route, onNavigate, auth, authLoading, onAuthRefresh }: Omit<Pr
           <NavLink active={route === 'option-chain'} onClick={() => onNavigate('option-chain')}>
             Option Chain
           </NavLink>
+          <NavLink active={route === 'strategy-builder'} onClick={() => onNavigate('strategy-builder')}>
+            Strategy Builder
+          </NavLink>
         </nav>
         <div className="flex-1" />
         <AuthBadge auth={auth} loading={authLoading} onRefresh={onAuthRefresh} />

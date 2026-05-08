@@ -2,17 +2,19 @@ import { useEffect, useState } from 'react';
 import { Layout } from './components/Layout';
 import { Dashboard } from './pages/Dashboard';
 import { OptionChain } from './pages/OptionChain';
+import { StrategyBuilder } from './pages/StrategyBuilder';
 import { api, type AuthStatus } from './lib/api';
 
-export type Route = 'dashboard' | 'option-chain';
+export type Route = 'dashboard' | 'option-chain' | 'strategy-builder';
 
 /**
  * Tiny hash-based router. Swap for react-router when the app grows past
- * 3 routes — for v0 this is plenty.
+ * 5 routes — for v0 this is plenty.
  */
 function readRoute(): Route {
   const h = (typeof window === 'undefined' ? '' : window.location.hash).replace(/^#\/?/, '');
   if (h.startsWith('option-chain')) return 'option-chain';
+  if (h.startsWith('strategy-builder')) return 'strategy-builder';
   return 'dashboard';
 }
 
@@ -52,6 +54,7 @@ export default function App() {
     >
       {route === 'dashboard' && <Dashboard authConnected={!!auth?.connected} />}
       {route === 'option-chain' && <OptionChain authConnected={!!auth?.connected} />}
+      {route === 'strategy-builder' && <StrategyBuilder authConnected={!!auth?.connected} />}
     </Layout>
   );
 }
